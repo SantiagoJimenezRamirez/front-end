@@ -1,0 +1,37 @@
+<header class="bg-white flex w-full h-20 justify-between">
+    <div class="flex items-center flex-1 mr-8">
+        <div class="flex items-center h-4/5 ml-8 overflow-hidden">
+            <img src="../../../assets/img/proteger.png" alt="Logo"
+                class="h-4/5 ml-5 transition-height duration-300 ease-in-out">
+            <h1 class="text-3xl ml-8 mr-8 whitespace-nowrap overflow-hidden text-ellipsis">SUPERHEROS</h1>
+        </div>
+    </div>
+    <div class="flex items-center flex-1 ml-2">
+        <ul class="flex justify-center list-none p-0 m-0 bg-white">
+            <li class="relative w-28">
+                <a [routerLink]="['/dashboard']"
+                    class="block text-center text-black py-3.5 px-4 no-underline hover:bg-purple-200 hover:text-black">Home</a>
+            </li>
+            <li class="relative w-28">
+                <a [routerLink]="['/addHeroe']"
+                    class="block text-center text-black py-3.5 px-4 no-underline hover:bg-purple-200 hover:text-black">Add Heroe</a>
+                <div class="hidden absolute bg-gray-200 min-w-max shadow-lg z-10">
+                </div>
+            </li>
+            <li class="relative w-28">
+                <a [routerLink]="['/getHeroes']"
+                    class="block text-center text-black py-3.5 px-4 no-underline hover:bg-purple-200 hover:text-black">Get Heroes</a>
+                <div class="hidden absolute bg-gray-200 min-w-max shadow-lg z-10">
+                </div>
+            </li>
+            <li class="relative w-28">
+                <a [routerLink]="['/dashboard']"
+                    class="block text-center text-black py-3.5 px-4 no-underline hover:bg-purple-200 hover:text-black">Edit Heroe</a>
+                <div class="hidden absolute bg-gray-200 min-w-max shadow-lg z-10">
+                </div>
+            </li>
+        </ul>
+        <button (click)="logOut()" class="relative w-28 ml-8 h-8 rounded-md text-white" style="background: #e63946;">Log
+            Out</button>
+    </div>
+</header>

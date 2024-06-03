@@ -1,0 +1,42 @@
+
+<div class="bg-gray-200">
+    <div *ngIf="!loading" class="relative z-10 flex items-center justify-center h-full">
+      <div class="flex items-center justify-center h-screen">
+        <div class="w-[500px] h-[420px] bg-[#f1faee] shadow-lg flex flex-col items-center p-4">
+          <!-- Contenedor de la imagen -->
+          <div class="w-full flex items-center justify-center mb-6 mt-6">
+            <img src="../../../assets/img/proteger.png" alt="Logo" class="w-auto h-auto">
+          </div>
+          <!-- Contenedores de inputs -->
+          <div class="w-4/5 mb-4">
+            <!-- Primer div con h3 e input de tipo texto -->
+            <h3 class="text-lg font-semibold text-gray-700">User</h3>
+            <div class="w-full flex flex-col mb-4">
+              <div class="w-5/5 h-8 bg-white flex items-center justify-center rounded-lg">
+                <input [(ngModel)] = "username" type="text" class="w-[85%] h-full px-2 border-none focus:outline-none rounded" placeholder="User">
+              </div>
+            </div>
+          </div>
+          <div class="w-4/5">
+            <!-- Segundo div con h3 e input de tipo contraseña -->
+            <h3 class="text-lg font-semibold text-gray-700">Password</h3>
+            <div class="w-full flex flex-col">
+              <div class="w-5/5 h-8 bg-white flex items-center justify-center rounded-lg">
+                <input [(ngModel)] = "password" type="password" class="w-[85%] h-full px-2 border-none focus:outline-none rounded" placeholder="Password">
+              </div>
+            </div>
+          </div>
+          <div class="mt-2 w-4/5 items-center justify-center rounded-lg text-[14px]">
+            <p class="text-gray-500">Don't have an account yet? <a class ="text-blue-700" href="" [routerLink] = "['/register']">Create Account</a></p>
+            <a class ="text-blue-700" [routerLink] = "['/forgot-password']">Forgot Password</a>
+          </div>
+          <div class="w-4/5 flex items-center justify-center ">
+            <button (click)="login()" class=" mt-6 w-4/5 h-8 rounded-md text-white" style="background: #e63946;">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-spinner *ngIf="loading">
+
+    </app-spinner>
+  </div>

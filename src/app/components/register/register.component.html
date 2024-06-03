@@ -1,0 +1,65 @@
+<div class="flex items-center justify-center bg-gray-200">  
+    <div *ngIf="!loading" class="relative z-10 flex items-center justify-center h-full">
+
+        <div class="flex items-center justify-center h-screen">
+            <div class="w-[500px] h-[540px] bg-[#f1faee] shadow-lg flex flex-col items-center p-4">
+                <!-- Contenedor de la imagen -->
+                <div class="w-full flex items-center justify-center mb-6 mt-6">
+                    <img src="../../../assets/img/proteger.png" alt="Logo" class="w-auto h-auto">
+                </div>
+                <!-- Contenedores de inputs -->
+                <div class="w-4/5">
+                    <!-- Primer div con h3 e input de tipo texto -->
+                    <h3 class="text-lg font-semibold text-gray-700">User</h3>
+                    <div class="w-full flex flex-col mb-2">
+                        <div class="w-5/5 h-8 bg-white flex items-center justify-center rounded-lg">
+                            <input type="text" [(ngModel)] = "username" class="w-[85%] h-full px-2 border-none focus:outline-none rounded"
+                                placeholder="SantiagoJR">
+                        </div>
+                    </div>
+                </div>
+                <div class="w-4/5">
+                    <!-- Segundo div con h3 e input de tipo texto -->
+                    <h3 class="text-lg font-semibold text-gray-700">Email</h3>
+                    <div class="w-full flex flex-col mb-2">
+                        <div class="w-5/5 h-8 bg-white flex items-center justify-center rounded-lg">
+                            <input type="email" [(ngModel)] = "email" class="w-[85%] h-full px-2 border-none focus:outline-none rounded"
+                                placeholder="example@gmail.com">
+                        </div>
+                    </div>
+                </div>
+                <div class="w-4/5">
+                    <!-- Tercero div con h3 e input de tipo contraseña -->
+                    <h3 class="text-lg font-semibold text-gray-700">Password</h3>
+                    <div class="w-full flex flex-col mb-2">
+                        <div class="w-5/5 h-8 bg-white flex items-center justify-center rounded-lg">
+                            <input id="passwordInput" type="password" [(ngModel)] = "password" class="w-[85%] h-full px-2 border-none focus:outline-none rounded-lg text-lg" placeholder="Contraseña">
+        <img src="../../../assets/img/eye.svg" alt="show password" class="right-2 cursor-pointer" (click)="togglePasswordVisibility()">
+
+      </div>
+                    </div>
+                </div>
+                <div class="w-4/5">
+                    
+                    <h3 class="text-lg font-semibold text-gray-700">Role</h3>
+                    <div class="w-full flex flex-col mb-2">
+                        <div class="w-5/5 h-8 flex items-center justify-center rounded-lg space-x-4">
+                            <!-- Opción 1 -->
+                            <input type="radio" [(ngModel)] = "rol" id="user" name="opcion" value="User" class="opcion-input">
+                            <label for="User" class="opcion-label">User</label>
+                        
+                            <!-- Opción 2 -->
+                            <input type="radio" [(ngModel)] = "rol" id="Admin" name="opcion" value="Admin" class="opcion-input">
+                            <label for="Admin" class="opcion-label">Admin</label>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="w-4/5 flex items-center justify-center ">
+                    <button (click)="addUser()" class=" mt-6 w-4/5 h-8 rounded-md text-white" style="background: #e63946;">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-spinner *ngIf ="loading"></app-spinner> 
+</div>
