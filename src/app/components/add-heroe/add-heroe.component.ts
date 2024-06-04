@@ -26,7 +26,6 @@ export class AddHeroeComponent {
     this._heroeServices.createHeroe(newHeroe).subscribe(response => {
       console.log(newHeroe);
       console.log(response);
-      // Puedes redirigir a otra página o hacer cualquier otra acción después de crear el héroe
     });
   }
 }

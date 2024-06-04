@@ -1,1 +1,25 @@
-<p >Los valores se imprimieron en consola</p>
+<!-- frontend/src/app/hero-list/hero-list.component.html -->
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <h2 class="text-2xl font-bold text-center my-4">Hero List</h2>
+      <table class="min-w-full bg-white">
+        <thead>
+          <tr>
+            <th class="px-4 py-2 border">Index</th>
+            <th class="px-4 py-2 border">ID</th>
+            <th class="px-4 py-2 border">Name</th>
+            <th class="px-4 py-2 border">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hero of heroes; let i = index" class="text-center">
+            <td class="px-4 py-2 border">{{ i + 1 }}</td>
+            <td class="px-4 py-2 border">{{ hero.id }}</td>
+            <td class="px-4 py-2 border">{{ hero.name }}</td>
+            <td class="px-4 py-2 border">{{ hero.description }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

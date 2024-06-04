@@ -21,17 +21,13 @@ import { RegisterComponent } from '../register/register.component';
     styleUrl: './login.component.css',
     imports: [RegisterComponent, RouterModule, ForgotPasswordComponent, FormsModule, HttpClientModule, SpinnerComponent, CommonModule]
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent{
   username : string = '';
   password : string = '';
   loading : boolean  = false;
 
   constructor(private  _userService : UserService, private router : Router, private _error : ErrorService){
 
-  }
-
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
   }
 
   login(){

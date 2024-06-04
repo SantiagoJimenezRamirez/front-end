@@ -10,20 +10,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './guard/auth.guard';
-import { AddTokenInterceptor } from './utils/add-token.interceptor';
 import { AuthInterceptor } from './utils/auth-interceptor.interceptor';
 import { AddHeroeComponent } from './components/add-heroe/add-heroe.component';
 import { GetHeroeComponent } from './components/get-heroe/get-heroe.component';
+import { EditHeroeComponent } from './components/edit-heroe/edit-heroe.component';
 
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-    { path: 'forgot-password', component: ForgotPasswordComponent },
-    { path: 'addHeroe', component: AddHeroeComponent },
-    { path: 'getHeroes', component: GetHeroeComponent },
+    { path: 'forgot-password', component: ForgotPasswordComponent,  },
+    { path: 'dashboard', component: DashboardComponent,  canActivate: [AuthGuard] },
+    { path: 'addHeroe', component: AddHeroeComponent, canActivate: [AuthGuard] },
+    { path: 'getHeroes', component: GetHeroeComponent, canActivate: [AuthGuard] },
+    { path: 'edit-heroe', component: EditHeroeComponent, canActivate: [AuthGuard]},
     { path: '**', redirectTo: 'notFound', pathMatch: 'full' }
 ];
 
